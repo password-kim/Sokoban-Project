@@ -75,11 +75,15 @@ namespace ProjectS
             }
 
             // 플레이어를 그린다.
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
             RenderObject(player.X, player.Y, "д");
 
             // 박스를 그린다.
             for (int boxId = 0; boxId < Game.BOX_COUNT; ++boxId)
             {
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 RenderObject(boxes[boxId].X, boxes[boxId].Y, "■");
             }
 
@@ -87,12 +91,25 @@ namespace ProjectS
             for (int goalId = 0; goalId < Game.GOAL_COUNT; ++goalId)
             {
                 string goalShape = goals[goalId].isBoxOnGoal ? "▣" : "□";
-                RenderObject(goals[goalId].X, goals[goalId].Y, goalShape);
+                if(goalShape == "□")
+                {
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    RenderObject(goals[goalId].X, goals[goalId].Y, goalShape);
+                }
+                else
+                {
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    RenderObject(goals[goalId].X, goals[goalId].Y, goalShape);
+                }
             }
 
             // 벽을 그린다.
             for (int wallId = 0; wallId < Game.WALL_COUNT; ++wallId)
             {
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 RenderObject(walls[wallId].X, walls[wallId].Y, "П");
             }
 
@@ -156,10 +173,16 @@ namespace ProjectS
             {
                 if (player.isExistLIFE[lifeId])
                 {
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("♥");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                 }
                 else
                 {
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("♡");
                 }
             }

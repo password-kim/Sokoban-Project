@@ -19,6 +19,7 @@ namespace ProjectS
         }
 
         RenderManager renderer = new RenderManager();
+        Random rand = new Random();
 
         /// <summary>
         /// 플레이어와 벽 충돌시 처리해주는 함수.
@@ -210,6 +211,7 @@ namespace ProjectS
                 {
                     continue;
                 }
+
                 if (traps[trapId].isTrapExist)
                 {
                     player.lifeCount--;

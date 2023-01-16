@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectS
 {
-    public class Game
+    public struct Game
     {
         public Game()
         {
@@ -19,7 +19,7 @@ namespace ProjectS
         public const int GOAL_COUNT = 5;
         public const int BOX_COUNT = GOAL_COUNT;
         public const int WALL_COUNT = 15;
-        public const int TRAP_COUNT = 25;
+        public const int TRAP_COUNT = 20;
 
         // 맵의 크기.
         public const int MIN_X = 1;

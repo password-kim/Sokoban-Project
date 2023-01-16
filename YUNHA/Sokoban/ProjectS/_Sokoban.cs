@@ -61,7 +61,6 @@ namespace ProjectS
                 // 게임 Update.
                 Update(key);
 
-                
                 Thread.Sleep(1);
             }
 
